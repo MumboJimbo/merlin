@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Merlin.API.Direct;
 
 namespace Merlin.Profiles.Gatherer
 {
@@ -17,15 +18,6 @@ namespace Merlin.Profiles.Gatherer
         #region Methods
         private void Search()
         {
-            Core.Log("Yo");
-            //if (_localPlayerCharacterView.IsUnderAttack(out FightingObjectView attacker)){
-            //Switch to Combat state
-            //}
-            Core.Log("You");
-            //_localPlayerCharacterView.CreateTextEffectTimed("WP: " + _localPlayerCharacterView.GetCharacter().GetWeightPercentage());
-            //_localPlayerCharacterView.CreateTextEffectTimed("WP: " + _localPlayerCharacterView.GetCharacter().GetWeightPercentage() * 100f);
-            Core.Log("Mg");
-
             if (_localPlayerCharacterView.IsUnderAttack(out FightingObjectView attacker))
             {
                 Core.Log("[Attacked]");
@@ -113,7 +105,7 @@ namespace Merlin.Profiles.Gatherer
 
         public bool IsBlocked(Vector2 location)
         {
-            var vector = new Vector3(location.x, 0, location.y);
+            var point2 = new Point2(location.x, location.y);
 
             if (_currentTarget != null)
             {
@@ -134,9 +126,7 @@ namespace Merlin.Profiles.Gatherer
                 if (distance < 2f)
                     return false;
             }
-
-            //return (_client.Collision.GetFlag(vector, 1.0f) > 0);
-            return false;
+            return (_world.GetCollisionManager().GetCollision(point2, 1.0f) > 0);
         }
     }
 

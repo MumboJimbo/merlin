@@ -10,5 +10,7 @@ namespace Merlin
     {
         public static FightingObject GetFightingObject(this FightingObjectView view) => view.FightingObject;
         public static long GetTargetId(this FightingObjectView view) => view.GetFightingObject().GetTargetId();
+
+        public static CastSpellDescriptor GetSpellCasted(this FightingObjectView view) => view.GetSpellCasted(); 
     }
 }

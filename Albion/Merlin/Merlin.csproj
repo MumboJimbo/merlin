@@ -72,8 +72,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Direct\CharacterSpellSlot.cs" />
+    <Compile Include="API\Direct\SpellCategory.cs" />
+    <Compile Include="API\Direct\SpellTarget.cs" />
+    <Compile Include="API\Direct\SpellUIType.cs" />
     <Compile Include="API\Extensions\HarvestableObjectViewExtensions.cs" />
     <Compile Include="API\Extensions\SimulationObjectViewExtensions.cs" />
+    <Compile Include="API\Extensions\SpellsExtension.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="API\Direct\ActiveSpellDescriptor.cs" />
     <Compile Include="API\Direct\AgentDescriptor.cs" />
@@ -183,9 +188,22 @@
     <Compile Include="Pathing\Worldmap\WorldmapPathfinder.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Profiles\ClusterPathingRequest.cs" />
+    <Compile Include="Profiles\Combat.cs" />
+    <Compile Include="Profiles\Expedition\Expedition.Combat.cs" />
+    <Compile Include="Profiles\Expedition\Expedition.cs" />
+    <Compile Include="Profiles\Expedition\Expedition.Navigation.cs" />
+    <Compile Include="Profiles\Expedition\Expedition.Restart.cs" />
+    <Compile Include="Profiles\Expedition\ExpeditionPathingRequest.cs" />
+    <Compile Include="Profiles\Expedition\Mob.cs" />
+    <Compile Include="Profiles\Expedition\Mobs\HereticArcherMob.cs" />
+    <Compile Include="Profiles\Expedition\Mobs\HereticMageMob.cs" />
+    <Compile Include="Profiles\Expedition\Mobs\HereticMinibossMob.cs" />
+    <Compile Include="Profiles\Expedition\Mobs\HereticTankMob.cs" />
+    <Compile Include="Profiles\Expedition\Mobs\OverseerMob.cs" />
     <Compile Include="Profiles\Gatherer\Gatherer.Harvest.cs" />
     <Compile Include="Profiles\Gatherer\Gatherer.cs" />
     <Compile Include="Profiles\Gatherer\Gatherer.Search.cs" />
+    <Compile Include="Profiles\Helper\Spells.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

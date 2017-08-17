@@ -1,4 +1,5 @@
 ﻿using Merlin.Profiles.Gatherer;
+using Merlin.Profiles.Expedition;
 using System;
 using System.IO;
 using System.Reflection;
@@ -8,6 +9,8 @@ namespace Merlin
 {
     public class Core
     {
+        private const string LogFile = @"C:\Temp\Logs.txt";
+
         public static GameObject _coreObject;
 
         private static Profile _activeProfile;
@@ -16,9 +19,7 @@ namespace Merlin
         {
             _coreObject = new GameObject();
 
-            Log("Hey");
-            var gatherer = _coreObject.AddComponent<Gatherer>();
-            Log("Ho");
+            var gatherer = _coreObject.AddComponent<Expedition>();
             Activate(gatherer);
             UnityEngine.Object.DontDestroyOnLoad(_coreObject);
         }
@@ -37,11 +38,25 @@ namespace Merlin
 
         public static void Log(string message)
         {
-                Debug.Log($"[{DateTime.Now}] {message}");
+            using (var stream = new FileStream(LogFile, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+            using (var writer = new StreamWriter(stream))
+            {
+                writer.WriteLine($"[{DateTime.Now}] {message}");
+            }
+            Debug.Log($"[{DateTime.Now}] {message}");
         }
 
         public static void Log(Exception e)
         {
+            using (var stream = new FileStream(LogFile, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+            using (var writer = new StreamWriter(stream))
+            {
+                writer.WriteLine($"{DateTime.Now}: ===================================");
+                writer.WriteLine($"{DateTime.Now}: {e.Message}");
+                writer.WriteLine($"{DateTime.Now}: {e.StackTrace}");
+                writer.WriteLine();
+                writer.WriteLine();
+            }
             Debug.LogException(e);
         }
 

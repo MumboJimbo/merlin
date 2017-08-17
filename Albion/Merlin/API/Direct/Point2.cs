@@ -54,6 +54,11 @@ namespace Merlin.API.Direct
         {
             _internal = instance;
         }
+
+        public Point2(float _x, float _y)
+        {
+            _internal = new ajg(_x, _y);
+        }
         
         static Point2()
         {

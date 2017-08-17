@@ -131,13 +131,13 @@ namespace Merlin.Profiles.Gatherer
                 if (!HandleMounting(targetCenter))
                     return;
 
-               /* if (_localPlayerCharacterView.TryFindPath(new ClusterPathfinder(), targetCenter, IsBlocked, out List<Vector3> pathing))
+                if (_localPlayerCharacterView.TryFindPath(new ClusterPathfinder(), targetCenter, IsBlocked, out List<Vector3> pathing))
                     _harvestPathingRequest = new ClusterPathingRequest(_localPlayerCharacterView, _currentTarget, pathing);
                 else
                 {
                     _state.Fire(Trigger.DepletedResource);
                 }
-                */
+                
 
                 return;
             }

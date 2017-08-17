@@ -45,15 +45,31 @@ namespace Merlin.API.Direct
         public ObservableRange<acy> GetCraftingFocus() => _internal.sd();
         public Point2 GetDestination() => _internal.tl();
         public GameTimeStamp GetGlobalCooldownTimeStamp() => _internal.th();
+
+        public float IsCastingSpell() => _internal.v6().f();
         public float GetSpellSlotCooldownPercent(byte A_0) => _internal.hk((byte)A_0);
-        public adu[] GetSpellSlots() => _internal.tg();
+        public SpellSlot[] GetSpellSlots()
+        {
+            var internalSpells = _internal.tg();
+            var spells = new SpellSlot[internalSpells.Length];
+
+            for (int i = 0; i < spells.Length; i++)
+            {
+                if (internalSpells[i] != null)
+                    spells[i] = new SpellSlot(internalSpells[i]);
+            }
+
+            return spells;
+        }
         public float GetLoad() => _internal.ua();
         public float GetMaxLoad() => _internal.we();
-        
+        public float GetHealth() => _internal.v4().r();
+        public float GetMaxHealth() => _internal.v4().l();
+
         #endregion
-        
+
         #region Constructor
-        
+
         public LocalPlayerCharacter(awt instance)
         {
             _internal = instance;

@@ -50,6 +50,8 @@ namespace Merlin.API.Direct
         public string GetIdent() => _internal.ak();
         public Point2 GetOrigin() => _internal.aw();
         public Point2 GetSize() => _internal.ax();
+
+        public l8.ClusterNameInformation GetClusterNameInformation() => _internal.ao();
         public List<TerritoryDescriptor> GetTerritories() => _internal.a4().Select(x =>(TerritoryDescriptor)x).ToList();
         public TerritoryDescriptor GetTerritory(Guid A_0) => _internal.al((Guid)A_0);
         

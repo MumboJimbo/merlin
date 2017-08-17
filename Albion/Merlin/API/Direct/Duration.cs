@@ -32,21 +32,21 @@ namespace Merlin.API.Direct
         #region Properties
         
         public ajv Internal => _internal;
-        
+
         #endregion
-        
+
         #region Fields
-        
-        
+
+
         #endregion
-        
+
         #region Methods
-        
-        
+        public long GetMilliSeconds() => _internal.p();
+
         #endregion
-        
+
         #region Constructor
-        
+
         public Duration(ajv instance)
         {
             _internal = instance;

@@ -32,6 +32,7 @@ namespace Merlin.API.Direct
         #region Properties
         
         public l5 Internal => _internal;
+ 
         
         #endregion
         

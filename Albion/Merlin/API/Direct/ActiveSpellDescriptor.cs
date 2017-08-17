@@ -32,21 +32,27 @@ namespace Merlin.API.Direct
         #region Properties
         
         public gz Internal => _internal;
-        
+
         #endregion
-        
+
         #region Fields
-        
-        
+
+
         #endregion
-        
+
         #region Methods
+
+        public SpellTarget GetSpellTarget() => _internal.d1.ToWrapped();
+        public SpellUiType GetSpellUIType() => _internal.d3.ToWrapped();
+        public SpellCategory GetSpellCategory() => _internal.d4.ToWrapped();
+        public String GetName() => _internal.d6;
         
         
+
         #endregion
-        
+
         #region Constructor
-        
+
         public ActiveSpellDescriptor(gz instance)
         {
             _internal = instance;

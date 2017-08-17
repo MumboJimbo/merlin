@@ -1,6 +1,7 @@
 ﻿using Stateless;
 using System.Collections.Generic;
 using UnityEngine;
+using Merlin.API.Direct;
 
 namespace Merlin.Profiles
 {
@@ -86,7 +87,8 @@ namespace Merlin.Profiles
                         }
                         else
                         {
-                           // _player.RequestMove(currentNode);
+                            Point2 point2 = new Point2(currentNode.x, currentNode.y);
+                            _player.RequestMove(point2);
                         }
 
                         if (_path.Count > 0)

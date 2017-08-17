@@ -32,16 +32,16 @@ namespace Merlin.API.Direct
         #region Properties
         
         public g0 Internal => _internal;
-        
+        public ActiveSpellDescriptor parent => _internal;
+
         #endregion
-        
+
         #region Fields
-        
-        
+
+
         #endregion
-        
+
         #region Methods
-        
         
         #endregion
         
